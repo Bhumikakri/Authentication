@@ -1,0 +1,49 @@
+.RegisterPage{
+    width: 100vw;
+    height: 100vh;
+    /* border: 2px solid red; */
+    background-color: rgba(30, 79, 88, 0.596);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Signup{
+    width: 25%;
+    height:70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem;
+    /* border: 1px solid rgb(7, 91, 97);  */
+    background-color: rgba(7, 96, 99, 0.616);
+    border-radius: 8px;
+    box-shadow: 3px 8px 9px rgb(37, 37, 37);
+    color: rgb(255, 255, 255);
+}
+form{
+    width:90%;
+    height: 90%;
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+}
+.inp{
+    width: 100%;
+    height: 2rem;
+    padding: 1rem;
+    font-size: 1.1rem;
+    color: rgb(3, 40, 43);
+    border-radius: 3px;
+    border: 1px solid  rgb(8, 83, 88);
+}
+button{
+    width: 100%;
+    height: 2rem;
+    margin-top: 3rem;
+    color: aliceblue;
+    cursor: pointer;
+    border: 2px solid rgb(255, 255, 255);
+    background-color: rgb(8, 83, 88) ;
+    border-radius: 6px;
+}
