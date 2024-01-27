@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import { useAuth } from "../Context/AuthProvider";
-import { useNavigate, Navigate } from "react-router-dom";
+import {  Navigate } from "react-router-dom";
 
 
 const Layout = () => {
