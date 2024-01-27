@@ -2,6 +2,8 @@ import './register.css';
 import React from 'react';
 import { useState , useRef } from "react";
 import { useAuth } from '../Context/AuthProvider';
+import { Link } from "react-router-dom";
+
 
 const Register = () => {
 
@@ -16,15 +18,18 @@ const Register = () => {
 
   const handleSubmit= async(e)=>{
     e.preventDefault();
-    if(passwordRef.current.value != confirmpasswordRef.current.value){
-      alert("recheck your confirm password again ");
+    setLoading(true);
+    if(passwordRef.current.value !== confirmpasswordRef.current.value){
+      alert("check your confirm password again ");
     }
     try {
-      const response= await authCtxt.signUp(emailRef.current.value,confirmpasswordRef.current.value);
-      console.log(response);
+      const currentUser= await authCtxt.signUp(emailRef.current.value,confirmpasswordRef.current.value);
+      alert(" Registration successfull ");
+      authCtxt.setCurrentUser(currentUser);
     } catch (error) {
       console.log(error);
     }
+    setLoading(false);
   }
 
   return (
@@ -39,6 +44,7 @@ const Register = () => {
           <lable>Password Confirmation:</lable>
           <input className="inp" type="password"ref={confirmpasswordRef} required/>
           <button disabled={loading} type="submit" >Sign Up</button>
+          <label>Already have an acount? <Link style={{color:'HighlightText'}} to="/">Log in</Link></label>
         </form>
       </div>
     </div>
